@@ -11,10 +11,10 @@ This is a simple React application that fetches user data from a Faker API. It d
    cd faker-app
 
 2. Install dependencies:
-   npm install
+   `npm install`
 
 3. Start the application:
-   npm start
+   `npm start`
 
 4. Open your browser and navigate to http://localhost:3000 to view the app.
 
