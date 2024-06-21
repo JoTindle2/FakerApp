@@ -1,6 +1,6 @@
 # FakerApp React App
 
-This is a simple React application that fetches user data from a Faker API using Axios. It demonstrates basic usage of TypeScript in a React project.
+This is a simple React application that fetches user data from a Faker APIs. It demonstrates basic usage of TypeScript in a React project.
 
 ## Installation
 

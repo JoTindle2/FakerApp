@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { faker } from '@faker-js/faker';
 
 interface User {
   id: number;
@@ -11,16 +11,14 @@ const App: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-        setUsers(response.data);
-      } catch (error) {
-        console.error('Error fetching users:', error);
-      }
-    };
+    // Generate mock user data using Faker API
+    const mockUsers: User[] = Array.from({ length: 5 }, (_, index) => ({
+      id: index + 1,
+      name: faker.person.fullName(),
+      email: faker.internet.email(),
+    }));
 
-    fetchUsers();
+    setUsers(mockUsers);
   }, []);
 
   const renderUsers = () => {
@@ -37,7 +35,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <h1>Users List</h1>
+      <h1>Mock Users List</h1>
       {users.length > 0 ? renderUsers() : <p>Loading...</p>}
     </div>
   );
